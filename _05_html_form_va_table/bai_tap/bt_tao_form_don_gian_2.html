@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản 2</title>
+    <style>
+        table {
+            font-family: Arial,sans-serif;
+            width: 50%;
+            background-color: #fffda9;
+            font-size: 18px;
+        }
+        label {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <td colspan="2" style="color: blue" style="background-color: #d4fdd6">ĐĂNG KÝ HỌC VIÊN</td>
+        </tr>
+        <tr>
+            <td><label for="yourname">Họ và tên</label></td>
+            <td>
+                <input type="text" name="yourname" id="yourname" size="25px">
+            </td>
+        </tr>
+        <tr>
+            <td><label for="birthday">Ngày sinh</label></td>
+            <td>
+                <input type="text" name="birthday" id="birthday" size="20px">
+            </td>
+        </tr>
+        <tr>
+            <td><label>Giới tính</label></td>
+            <td>
+                <input type="radio" name="gender" value="male" id="male"><label for="male">Nam</label>
+                <input type="radio" name="gender" value="female" id="female"><label for="female">Nữ</label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="address">Địa chỉ</label></td>
+            <td><textarea cols="50" rows="4" id="address"></textarea></td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td><label>Lớp</label></td>
+            <td>
+                <select name="class">
+                    <option value="C1">C1234</option>
+                    <option value="C2">C2345</option>
+                    <option value="C3">C3456</option>
+                    <option value="C4">C4567</option>
+                    <option value="C5">C5678</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Email</label> </td>
+            <td><input type="text" name="mail" id="email" size="22"></td>
+        </tr>
+        <tr>
+            <td><label for="phonenumber">Điện thoại</label></td>
+            <td><input type="text" name="phonenumber" id="phonenumber"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

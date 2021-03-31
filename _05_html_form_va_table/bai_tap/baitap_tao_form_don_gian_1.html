@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản 1</title>
+    <style>
+        table {
+            font-family: Arial,sans-serif;
+            border-style: none;
+            font-size: 18px;
+            background-color: white;
+            width: 40%;
+        }
+        td {
+            border-style: none;
+            color: coral;
+        }
+        th {
+            background-color: red;
+            border-style: none;
+            text-align: center;
+            color: white;
+        }
+
+        body {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table style="margin: auto">
+        <tr>
+            <th colspan="4">SỞ THÍCH CỦA BẠN</th>
+        </tr>
+        <tr>
+            <td style="text-align: right"><label for="yourname" style="color: blue">Họ và tên </label></td>
+            <td colspan="3"><input type="text" id="yourname" name="yourname" size="23px"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right"><label for="email" style="color: blue">Email </label></td>
+            <td colspan="3"><input type="text" id="email" name="email" size="15px"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right"><label style="color: blue">Sở thích</label></td>
+            <td><input type="checkbox" name="hobby" value="the thao" id="the thao"><label for="the thao">Thể thao</label></td>
+            <td><input type="checkbox" name="hobby" value="am nhac" id="am nhac"><label for="am nhac">Âm nhạc</label></td>
+            <td><input type="checkbox" name="hobby" value="doc sach" id="doc sach"><label for="doc sach">Đọc sách</label></td>
+        </tr>
+        <tr>
+            <td rowspan="3"></td>
+            <td><input type="checkbox" name="hobby" value="luot web" id="luot web"><label for="luot web">Lướt web</label> </td>
+            <td><input type="checkbox" name="hobby" value="choi game" id="choi game"><label for="choi game">Chơi game</label> </td>
+            <td><input type="checkbox" name="hobby" value="dien anh" id="dien anh"><label for="dien anh">Điện ảnh</label></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="hobby" value="du lich" id="du lich"><label for="du lich">Du lịch</label> </td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại"> </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
