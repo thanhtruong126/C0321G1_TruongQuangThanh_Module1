@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến, kiểu dữ liệu và toán tử 1</title>
+</head>
+<body>
+    <script>
+        let inputphysicalscore
+        let inputchemistryscore
+        let inputbiologyscore
+        inputphysicalscore=prompt("Enter physical score");
+        inputchemistryscore=prompt("Enter chemistry score");
+        inputbiologyscore=prompt("Enter biology score");
+        let physicalscore=parseInt(inputphysicalscore);
+        let chemistryscore = parseInt(inputchemistryscore);
+        let biologyscore = parseInt(inputbiologyscore);
+        let averagescore = (physicalscore + chemistryscore + biologyscore)/3;
+        let totalscore = physicalscore + chemistryscore + biologyscore;
+        document.write("averagescore = " +averagescore);
+        document.write("<br>");
+        document.write("totalscore = " +totalscore);
+    </script>
+</body>
+</html>
