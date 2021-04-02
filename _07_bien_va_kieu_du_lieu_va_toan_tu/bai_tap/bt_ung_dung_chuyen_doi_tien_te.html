@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <style>
+        table {
+            margin: auto;
+            width: 50%;
+            font-size: large;
+        }
+        td {
+            text-align: center;
+        }
+        button {
+            background-color: #8f82cf;
+            color: white;
+        }
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <form name="myForm" onsubmit="return doitien()">
+        <table>
+            <tr>
+                <th><label for="amount">Amount</label></th>
+                <th><label for="currency1">Currency</label></th>
+                <th><label for="currency2">To Currency</label></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="amount" size="10px" id="amount">
+                </td>
+                <td>
+                    <select id="currency1">
+                        <option value="23000">VietNam</option>
+                        <option value="1">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="currency2">
+                        <option value="1">USD</option>
+                        <option value="23000">VietNam</option>
+                    </select>
+                </td>
+                <td><button type="button" onclick="doitien()">Convert</button> </td>
+            </tr>
+        </table>
+    </form>
+    <p id="hienthi"></p>
+    <script>
+        function doitien() {
+            let soTienDeDoi = document.forms["myForm"]["amount"].value;
+            let a = document.getElementById("currency1").value;
+            let b = document.getElementById("currency2").value;
+            let e = a / b;
+            let f = parseFloat(soTienDeDoi) / e;
+            document.getElementById("hienthi").innerHTML = "Result: " + f;
+        }
+    </script>
+</body>
+</html>
