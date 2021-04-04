@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+    <style>
+        table {
+            width: 30%;
+            height: 200px;
+        }
+        td {
+            text-align: center;
+        }
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Caculator</h1>
+    <form>
+        <table>
+            <tr>
+                <td colspan="2"><label for="so1">Nhập số thứ 1</label></td>
+                <td colspan="2"><label for="so2">Nhập số thứ 2</label></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="text" name="othu1" id="so1">
+                </td>
+                <td colspan="2">
+                    <input type="text" name="othu2" id="so2">
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="add()">Addition(+)</button></td>
+                <td><button type="button" onclick="sub()">Subtraction(-)</button></td>
+                <td><button type="button" onclick="multi()">Multiplication(X)</button></td>
+                <td><button type="button" onclick="div()">Division(/)</button></td>
+            </tr>
+        </table>
+    </form>
+    <p id="hienthi"></p>
+    <script>
+        /*let a = document.getElementById("so1").value;
+        let b = document.getElementById("so2").value;*/
+        function add() {
+            let a = document.getElementById("so1").value;
+            let b = document.getElementById("so2").value;
+            let add = parseFloat(a) + parseFloat(b);
+            document.getElementById("hienthi").innerHTML = "Result Addition: " + add;
+        }
+        function sub() {
+            let a = document.getElementById("so1").value;
+            let b = document.getElementById("so2").value;
+            let sub = parseFloat(a) - parseFloat(b);
+            document.getElementById("hienthi").innerHTML = "Result Subtraction: " + sub;
+        }
+        function multi() {
+            let a = document.getElementById("so1").value;
+            let b = document.getElementById("so2").value;
+            let multi = parseFloat(a) * parseFloat(b);
+            document.getElementById("hienthi").innerHTML = "Result Multiplication: " + multi;
+        }
+        function div() {
+            let a = document.getElementById("so1").value;
+            let b = document.getElementById("so2").value;
+            let div = parseFloat(a) / parseFloat(b);
+            document.getElementById("hienthi").innerHTML = "Result Division: " + div;
+        }
+    </script>
+</body>
+</html>
