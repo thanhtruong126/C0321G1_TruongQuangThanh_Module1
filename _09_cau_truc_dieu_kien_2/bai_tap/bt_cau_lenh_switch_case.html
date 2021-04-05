@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phép tính số ngày trong tháng</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label for="soNgay">Nhập số ngày</label></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="soNgay"></td>
+                <td><input type="button" value="Tính số ngày" onclick="tinhSoNgay()"></td>
+            </tr>
+        </table>
+    </form>
+    <p id="display"></p>
+    <script>
+        function tinhSoNgay() {
+            let a = parseInt(document.getElementById("soNgay").value);
+            let b ;
+            switch (a) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    b = "31 ngày";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    b = "30 ngày";
+                    break;
+                default :
+                    b= "28 hoặc 29 ngày";
+            }
+            document.getElementById("display").innerHTML = "Tháng " + a + " có " +b;
+        }
+    </script>
+</body>
+</html>
