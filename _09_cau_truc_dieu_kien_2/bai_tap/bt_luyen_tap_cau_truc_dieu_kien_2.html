@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc điều kiện 2</title>
+    <style>
+        .result {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p><b>Bài 1: Chuyển từ độ C sang độ F.</b></p>
+    <label for="inputC">Input C: <input type="text" size="15px" id="inputC"></label>
+    <input type="button" value="Convert" onclick="cConvertF()">
+    <p id="result1" class="result"></p>
+    <hr>
+    <p><b>Bài 2: Chuyển từ mét sang feet.</b></p>
+    <label for="inputM">Input meters: </label><input type="text" size="15px" id="inputM">
+    <input type="button" value="Convert" onclick="mConvertF()">
+    <p id="result2" class="result"></p>
+    <hr>
+    <p><b>Bài 3: Tính diện tích hình vuông khi biết cạnh a.</b></p>
+    <label for="squaA">Input side a: </label><input type="text" size="15px" id="squaA">
+    <input type="button" value="Area" onclick="areaSqua()">
+    <p id="result3" class="result"></p>
+    <hr>
+    <p><b>Bài 4: Tính diện tích hình chữ nhật khi biết 2 cạnh a, b.</b></p>
+    <label for="recA">Input a: </label><input type="text" size="15px" id="recA">
+    <label for="recB">Input b: </label><input type="text" size="15px" id="recB">
+    <input type="button" value="Area" onclick="areaRec()">
+    <p id="result4" class="result"></p>
+    <hr>
+    <p><b>Bài 5: Tính diện tích tam giác vuông khi biết 2 cạnh kề a, b.</b></p>
+    <label for="triA">Input a: </label><input type="text" size="15px" id="triA">
+    <label for="triB">Input b: </label><input type="text" size="15px" id="triB">
+    <input type="button" value="Area" onclick="areaRightTri()">
+    <p id="result5" class="result"></p>
+    <hr>
+    <p><b>Bài 6: Giải phương trình bậc 1. ax+b=0 </b></p>
+    <label for="inputA">Input a: </label><input type="text" size="15px" id="inputA">
+    <label for="inputB">Input b: </label><input type="text" size="15px" id="inputB">
+    <input type="button" value="Caculator" onclick="linEqu()">
+    <p id="result6" class="result"></p>
+    <hr>
+    <p><b>Bài 7: Giải phương trình bậc 2. ax²+bx+c=0</b></p>
+    <label for="inputA1">Input a: </label><input type="text" size="15px" id="inputA1">
+    <label for="inputB1">Input b: </label><input type="text" size="15px" id="inputB1">
+    <label for="inputC1">Input c: </label><input type="text" size="15px" id="inputC1">
+    <input type="button" value="Caculator" onclick="quaEqu()">
+    <p id="result7" class="result"></p>
+    <hr>
+    <p><b>Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không.
+        Một số nguyên là tuổi của một người khi nhỏ hơn 120 và lớn hơn 0. </b></p>
+    <label for="age">Input Age: </label><input type="text" size="15px" id="age">
+    <input type="button" value="Check Age" onclick="checkAge()">
+    <p id="result8" class="result"></p>
+    <hr>
+    <p><b>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác.
+        Điều kiện để a, b, c là cạnh của một tam giác là: <br>
+        a, b, c > 0 <br>
+        a + b > c <br>
+        b + c > a <br>
+        a + c > b </b> </p>
+    <label for="numberA">Input A: </label><input type="text" size="15px" id="numberA">
+    <label for="numberB">Input B: </label><input type="text" size="15px" id="numberB">
+    <label for="numberC">Input C: </label><input type="text" size="15px" id="numberC">
+    <input type="button" value="Check" onclick="checkSideTri()">
+    <p id="result9" class="result"></p>
+    <hr>
+    <p><b>Bài 10: Viết chương trình tính giá điện.<br>
+        Bậc 1: Cho kWh từ 0 - 50, giá bán điện(đồng/kWh) 1678.<br>
+        Bậc 2: Cho kWh từ 51 - 100, giá bán điện(đồng/kWh) 1734.<br>
+        Bậc 3: Cho kWh từ 101 - 200, giá bán điện(đồng/kWh) 2014.<br>
+        Bậc 4: Cho kWh từ 201 - 300, giá bán điện(đồng/kWh) 2536.<br>
+        Bậc 5: Cho kWh từ 301 - 400, giá bán điện(đồng/kWh) 2834.<br>
+        Bậc 6: Cho kWh từ 401 trở lên, giá bán điện(đồng/kWh) 2927.</b></p>
+    <label for="kwhMonth">Nhập số điện tiêu thụ hàng tháng: </label><input type="text" size="15px" id="kwhMonth">
+    <input type="button" value="Caculator" onclick="elecbill()">
+    <p id="result10" class="result"></p>
+    <hr>
+    <p><b>Bài 11: Viết chương trình thuế thu thập cá nhân.<br>
+        Bậc 1: Dưới 4 triệu đồng/tháng 0%; <br>
+        Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%; <br>
+        Bậc 3: Trên 6 - 9 triệu đồng/tháng: 10%; <br>
+        Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%; <br>
+        Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%; <br>
+        Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%; <br>
+        Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%; <br>
+        Bậc 8: Trên 84 triệu đồng/tháng: 35%.</b></p>
+    <label for="incTax">Thu nhập cá nhân hàng tháng: </label><input type="text" size="15px" id="incTax"> (Tính bằng triệu)
+    <input type="button" value="Caculator" onclick="perIncTax()">
+    <p id="result11" class="result"></p>
+    <hr>
+    <p><b>Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con)
+        khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.</b></p>
+    <label for="moneyP">Số tiền ban đầu: </label><input type="text" size="15px" id="moneyP">
+    <label for="rate">Lãi suất hàng tháng (%): </label><input type="text" size="15px" id="rate">
+    <label for="month">Số tháng cho vay: </label><input type="text" size="15px" id="month">
+    <input type="button" value="Caculator" onclick="intRate()">
+    <p id="result12" class="result"></p>
+    <script>
+        function cConvertF() {
+            let temC = parseFloat(document.getElementById("inputC").value);
+            let temF;
+            let result = document.getElementById("result1");
+            if (isNaN(temC)) {
+                result.innerText = "Vui lòng nhập bằng số."
+            } else {
+                temF = (temC * 9) / 5 + 32;
+                result.innerText = temC + " độ C bằng " + temF + " độ F."
+            }
+        }
+        function mConvertF() {
+            let mt = parseFloat(document.getElementById("inputM").value);
+            let result = document.getElementById("result2");
+            let ft;
+            if (isNaN(mt)) {
+                result.innerText = "Vui lòng nhập bằng số."
+            } else {
+                ft = mt * 3.2808;
+                result.innerText = mt + " mét bằng " + ft + " feet."
+            }
+        }
+        function areaSqua() {
+            let side = parseFloat(document.getElementById("squaA").value);
+            let area;
+            let result = document.getElementById("result3");
+            if (isNaN(side)) {
+                result.innerText = "Vui lòng nhập bằng số."
+            } else {
+                area = side * side;
+                result.innerText = "Diện tích hình vuông là " + area;
+            }
+        }
+        function areaRec() {
+            let sideRecA = parseFloat(document.getElementById("recA").value);
+            let sideRecB = parseFloat(document.getElementById("recB").value);
+            let areaRec;
+            let result = document.getElementById("result4");
+            if (isNaN(sideRecA) || isNaN(sideRecB)) {
+                result.innerText = "Vui lòng nhập bằng số và không bỏ trống."
+            } else {
+                areaRec = sideRecA * sideRecB;
+                result.innerText = "Diện tích hình chữ nhật là " + areaRec;
+            }
+        }
+        function areaRightTri() {
+            let sideTriA = parseFloat(document.getElementById("triA").value);
+            let sideTriB = parseFloat(document.getElementById("triB").value);
+            let areaRTri;
+            let result = document.getElementById("result5");
+            if (isNaN(sideTriA) || isNaN(sideTriB)) {
+                result.innerText = "Vui lòng nhập bằng số và không bỏ trống."
+            } else {
+                areaRTri = (sideTriA * sideTriB) / 2;
+                result.innerText = "Diện tích tam giác vuông là " + areaRTri;
+            }
+        }
+        function linEqu() {
+            let a1 = parseFloat(document.getElementById("inputA").value);
+            let b1 = parseFloat(document.getElementById("inputB").value);
+            let x1;
+            let result = document.getElementById("result6");
+            if (isNaN(a1) || isNaN(b1)) {
+                result.innerText = "Không xác định."
+            } else {
+                if (a1 == 0) {
+                    if (b1 == 0) {
+                        result.innerText = "Phương trình vô số nghiệm."
+                    } else {
+                        result.innerText = "Phương trình vô nghiệm."
+                    }
+                } else {
+                    x1 = -b1 / a1 ;
+                    result.innerText = "Phương trình có nghiệm x bằng " + x1;
+                }
+            }
+        }
+        function quaEqu() {
+            let a2 = parseFloat(document.getElementById("inputA1").value);
+            let b2 = parseFloat(document.getElementById("inputB1").value);
+            let c2 = parseFloat(document.getElementById("inputC1").value);
+            let x12, x22, x2;
+            let delta;
+            let result = document.getElementById("result7");
+            if (isNaN(a2) || isNaN(b2) || isNaN(c2)) {
+                result.innerText = "Không xác định."
+            } else {
+                if (a2 == 0) {
+                    // a2 == 0 phương trình trở thành phương trình bậc 1 bx + c = 0
+                    if (b2 == 0) {
+                        if (c2 == 0) {
+                            result.innerText = "Phương trình vô số nghiệm.";
+                        } else {
+                            result.innerText = "Phương trình vô nghiệm.";
+                        }
+                    } else {
+                        x2 = -c2 / b2;
+                        result.innerText = "Phương trình có nghiệm x bằng " + x2;
+                    }
+                } else {
+                    delta = (b2 * b2) - (4 * a2 * c2);
+                    if (delta > 0) {
+                        x12 = (-b2 + delta) / (2*a2);
+                        x22 = (-b2 - delta) / (2*a2);
+                        result.innerText = "Phương trình có 2 nghiệm x1 bằng " + x12 + " và x2 bằng " + x22;
+                    } else if (delta == 0) {
+                        x2= -(b2 / (2*a2));
+                        result.innerText = "Phương trình có nghiệm kép x1 bằng x2 bằng " + x2;
+                    } else {
+                        result.innerText = "Phương trình vô nghiệm."
+                    }
+                }
+            }
+        }
+        function checkAge() {
+            let age = parseInt(document.getElementById("age").value);
+            let result = document.getElementById("result8");
+            if (isNaN(age)) {
+                result.innerText = "Vui lòng nhập bằng số và không để trống."
+            } else {
+                if (age < 120 && age > 0) {
+                    result.innerText = "Số " + age + " là số tuổi hợp lệ của một người.";
+                } else {
+                    result.innerText = "Số " + age + " không phải là số tuổi hợp lệ của một người.";
+                }
+            }
+        }
+        function checkSideTri() {
+            let numA = parseFloat(document.getElementById("numberA").value);
+            let numB = parseFloat(document.getElementById("numberB").value);
+            let numC = parseFloat(document.getElementById("numberC").value);
+            let result = document.getElementById("result9");
+            if (isNaN(numA) || isNaN(numB) || isNaN(numC)) {
+                result.innerText = "Vui lòng nhập số và không bỏ trống."
+            } else {
+                if (numA >0 && numB >0 && numC > 0) {
+                    if ((numA + numB) > numC) {
+                        if ((numB + numC) > numA) {
+                            if ((numA + numC) > numB) {
+                                result.innerText = "Số " + numA + ", " + numB + ", " + numC + " là cạnh của một tam giác."
+                            } else {
+                                result.innerText = "Số " + numA + ", " + numB + ", " + numC + " không phải là cạnh của một tam giác."
+                            }
+                        } else {
+                            result.innerText = "Số " + numA + ", " + numB + ", " + numC + " không phải là cạnh của một tam giác."
+                        }
+                    } else {
+                        result.innerText = "Số " + numA + ", " + numB + ", " + numC + " không phải là cạnh của một tam giác."
+                    }
+                } else {
+                    result.innerText = "Số " + numA + ", " + numB + ", " + numC + " không phải là cạnh của một tam giác."
+                }
+            }
+        }
+        function elecbill() {
+            let kwh = parseFloat(document.getElementById("kwhMonth").value);
+            let elecMoney;
+            let result = document.getElementById("result10");
+            if (isNaN(kwh)) {
+                result.innerText = "Vui lòng nhập số và không bỏ trống."
+            } else {
+                if (kwh < 50) {
+                    elecMoney = kwh * 1678;
+                    result.innerText = "Số tiền cần phải đóng là " + elecMoney + " đồng."
+                } else if (kwh <= 100) {
+                    elecMoney = (1678 * 50) + ((kwh-50) * 1734);
+                    result.innerText = "Số tiền cần phải đóng là " + elecMoney + " đồng."
+                } else if (kwh <= 200) {
+                    elecMoney = (1678 * 50) + (1734 * 50) + ((kwh - 100) * 2014);
+                    result.innerText = "Số tiền cần phải đóng là " + elecMoney + " đồng."
+                } else if (kwh <= 300) {
+                    elecMoney = (1678 * 50) + (1734 * 50) + (2014 * 100) + ((kwh - 100) * 2536);
+                    result.innerText = "Số tiền cần phải đóng là " + elecMoney + " đồng."
+                } else if (kwh <= 400) {
+                    elecMoney = (1678 * 50) + (1734 * 50) + (2014 * 100) + (2536 * 100) + ((kwh - 100) * 2834);
+                    result.innerText = "Số tiền cần phải đóng là " + elecMoney + " đồng."
+                } else {
+                    elecMoney = (1678 * 50) + (1734 * 50) + (2014 * 100) + (2536 * 100) + (2834 * 100) + ((kwh - 400) * 2927);
+                    result.innerText = "Số tiền cần phải đóng là " + elecMoney + " đồng."
+                }
+            }
+        }
+        function perIncTax() {
+            let inc = parseFloat(document.getElementById("incTax").value);
+            let tax;
+            let result = document.getElementById("result11");
+            if (isNaN(inc)) {
+                result.innerText = "Vui lòng nhập bằng số và không bỏ trống."
+            } else {
+                if (inc <= 4) {
+                    tax = inc * (0/100);
+                    result.innerText = "Số tiền cần phải nộp thuế thu nhập cá nhân là " + tax + " triệu đồng.";
+                } else if (inc <= 6) {
+                    tax = inc * (5/100);
+                    result.innerText = "Số tiền cần phải nộp thuế thu nhập cá nhân là " + tax + " triệu đồng.";
+                } else if (inc <= 9) {
+                    tax = inc * (10/100);
+                    result.innerText = "Số tiền cần phải nộp thuế thu nhập cá nhân là " + tax + " triệu đồng.";
+                } else if (inc <= 14) {
+                    tax = inc * (15/100);
+                    result.innerText = "Số tiền cần phải nộp thuế thu nhập cá nhân là " + tax + " triệu đồng.";
+                } else if (inc <= 24) {
+                    tax = inc * (20/100);
+                    result.innerText = "Số tiền cần phải nộp thuế thu nhập cá nhân là " + tax + " triệu đồng.";
+                } else if (inc <= 44) {
+                    tax = inc * (25/100);
+                    result.innerText = "Số tiền cần phải nộp thuế thu nhập cá nhân là " + tax + " triệu đồng.";
+                } else if (inc <= 84) {
+                    tax = inc * (30/100);
+                    result.innerText = "Số tiền cần phải nộp thuế thu nhập cá nhân là " + tax + " triệu đồng.";
+                } else {
+                    tax = inc * (35/100);
+                    result.innerText = "Số tiền cần phải nộp thuế thu nhập cá nhân là " + tax + " triệu đồng.";
+                }
+            }
+        }
+        function intRate() {
+            let monP = parseFloat(document.getElementById("moneyP").value);
+            let rate = parseFloat(document.getElementById("rate").value);
+            let mont = parseFloat(document.getElementById("month").value);
+            let totalMoney = monP * Math.pow(1+(rate/100), mont);
+            document.getElementById("result12").innerText = "Số tiền nhận được sau " + mont + " tháng là " + totalMoney
+        }
+    </script>
+</body>
+</html>
