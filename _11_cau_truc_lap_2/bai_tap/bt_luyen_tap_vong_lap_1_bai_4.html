@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 1 bài 4</title>
+</head>
+<body>
+    <p><b>Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.</b></p>
+    <script>
+        let n1 = 0, n2 = 1, nextTerm, num5;
+        do {
+            nextTerm = n1 + n2;
+            num5 = nextTerm % 5;
+            n1 = n2;
+            n2 = nextTerm;
+        } while (num5 != 0);
+        document.write(nextTerm + " là số đầu tiên trong dãy chia hết cho 5.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8: Game đoán số</title>
+</head>
+<body>
+    <input type="button" value="Chơi" onclick="doanSo()">
+    <script>
+        function doanSo() {
+            let count = 1;
+            let ngDungNhap1 = parseInt(prompt("Số muốn đoán trong khoảng từ: "));
+            let ngDungNhap2 = parseInt(prompt("Số muốn đoán trong khoảng đến: "));
+
+            function ngauNhien(min, max) {
+                return  Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+            let soNgauNhien = ngauNhien(ngDungNhap1, ngDungNhap2);
+
+            for (let i = 1; count <= 3; i++) {
+                let ngDungDoan = parseInt(prompt("Số muốn đoán trong khoảng từ " + ngDungNhap1 + " đến " + ngDungNhap2));
+                if (soNgauNhien == ngDungDoan) {
+                    alert("Chúc mừng.");
+                    break;
+                } else if (ngDungDoan < soNgauNhien) {
+                    alert("Số bạn nhập bé hơn.");
+                    count++;
+                } else {
+                    alert("Số bạn nhập lớn hơn.")
+                    count++;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
