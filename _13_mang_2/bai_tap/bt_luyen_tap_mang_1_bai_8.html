@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 01 bài 8</title>
+</head>
+<body>
+<p><b>Bài 8- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử.<br>
+    Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.</b></p>
+<p>Sắp xếp mảng theo thứ tự giảm dần: </p>
+<p id="result"></p>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = parseFloat(prompt("Nhập số vào đây: "));
+    }
+    arrSort = arr.sort(function(a, b){return b-a});
+    document.getElementById("result").innerHTML = arrSort;
+</script>
+</body>
+</html>

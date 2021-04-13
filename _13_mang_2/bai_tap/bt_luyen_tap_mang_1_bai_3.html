@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 1 bài 3</title>
+</head>
+<body>
+    <p><b>Bài 3- Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó.<br>
+        In ra giá trị trung bình của các phần tử trong mảng.</b></p>
+    <script>
+        let arr = []
+        // Hiển thị giá trị lớn nhất
+        for (let i = 0; i < 7; i++) {
+            arr[i] = parseInt(prompt("Nhập 1 số nguyên bất kỳ: "));
+        }
+        let max = arr[0];
+        let index = 0;
+        for (let k = 1; k < 7; k++) {
+            if (arr[k] > max) {
+                max = arr[k];
+                index = k;
+            }
+        }
+        alert("Giá trị lớn nhất trong mảng là: " + max );
+        // In ra giá trị trung bình
+        let avg;
+        let sum = arr[0]
+        for (let j = 1; j < 7; j++) {
+            sum += arr[j];
+            avg = sum / 7;
+        }
+        document.write("Giá trị trung bình của các phần tử trong mảng là: " + avg);
+    </script>
+</body>
+</html>

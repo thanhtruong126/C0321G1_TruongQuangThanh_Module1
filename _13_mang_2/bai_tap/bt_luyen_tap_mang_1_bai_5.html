@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 1 bài 5</title>
+</head>
+<body>
+    <p><b>Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi</b></p>
+    <script>
+        let arr = prompt("Nhập một chuỗi bất kỳ: ").split("");
+        console.log(arr);
+        let count = 0;
+        console.log(arr)
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == "a" || arr[i] == 'o' || arr[i] == 'e' || arr[i] == 'u' || arr[i] == 'i') {
+                count++;
+            }
+        }
+        alert(count)
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 1 bài 1</title>
+</head>
+<body>
+    <p><b>Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử.<br>
+        Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</b></p>
+    <p>Các số nguyên lớn hơn hoặc bằng 10 là: </p>
+    <script>
+        let arr = [];
+        for (let i=0;i<10;i++){
+            arr[i]= prompt(" nhập phần tử thứ: "+ i);
+        }
+        for (let k = 0; k < arr.length; k++) {
+            if (arr[k] >= 10) {
+                let arr2 = [arr[k]]
+                for (let j = 0; j < arr2.length; j++) {
+                    document.write(arr2[j] + "<br>");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
