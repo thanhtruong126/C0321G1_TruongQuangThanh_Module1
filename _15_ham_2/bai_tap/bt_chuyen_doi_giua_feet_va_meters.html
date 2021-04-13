@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<script>
+    function footToMeter(meter) {
+        foot = 3.279 * meter;
+        return foot;
+    }
+
+    function meterToFoot(foot) {
+        meter = 0.305 * foot;
+        return meter;
+    }
+    let m = parseFloat(prompt("Nhập số mét cần chuyển sang feet: "))
+    let f = parseFloat(prompt("Nhập số feet cần chuyển sang mét: "))
+    alert(m + " mét tương đương " + meterToFoot(m) + " feet." );
+    alert(f + " feet tương đương " + footToMeter(f) + " mét.");
+
+</script>
+</body>
+</html>
