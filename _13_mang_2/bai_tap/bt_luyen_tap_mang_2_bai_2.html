@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 02 bài 2</title>
+</head>
+<body>
+<p><b>Bài 2: Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược.<br>
+    Ví dụ, nếu một mảng chứa các ký tự  [ 'c', 's', 'c', '2', '6', '1' ] sau khi thực hiện đảo ngược sẽ là "162csc"</b></p>
+<p>Mảng ban đầu [ 'c', 's', 'c', '2', '6', '1' ] </p>
+<p id="result"></p>
+<script>
+    let arr = ['c', 's', 'c', '2', '6', '1'];
+    let arrReverse = arr.reverse();
+    let result = document.getElementById("result")
+    result.innerHTML = "Mảng đảo ngược là: " + arrReverse;
+</script>
+</body>
+</html>

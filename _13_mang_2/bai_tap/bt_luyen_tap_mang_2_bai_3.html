@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 2 bài 3</title>
+</head>
+<body>
+<p><b>Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng. </b></p>
+<script>
+    let n = prompt("Nhập kích thước của mảng: ");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = parseInt(prompt("Nhập phần tử số " + i + " của mảng"));
+    }
+    document.write("Mảng arr có các phần tử " + arr );
+    let count;
+    for (let j = 0; j < arr.length; j++) {
+        count=j
+    }
+    document.write("Có " + count + " ký tự trong mảng");
+</script>
+</body>
+</html>
