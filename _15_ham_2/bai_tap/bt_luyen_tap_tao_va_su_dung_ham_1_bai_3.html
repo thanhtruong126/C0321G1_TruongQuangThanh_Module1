@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 1 bài 3</title>
+</head>
+<body>
+<p><b>Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng.<br>
+    Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.</b></p>
+<p id="result"></p>
+<script>
+    let i = parseFloat(prompt("Input A: "));
+    let j = parseFloat(prompt("Input B: "));
+    function myFunction(a, b) {
+        if (a > b) {
+            alert("Số " + a + " lớn hơn số " + b);
+        } else {
+            document.getElementById("result").innerHTML = "Tổng của " + a + " và " + b + " là " + (a + b);
+        }
+    }
+    myFunction(i,j);
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 01 bài 2</title>
+</head>
+<body>
+<p><b>Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm.<br>
+    Gọi hàm từ trong phần body của trang web và hiển thị kết quả lên màn hình.</b></p>
+<label for="input">Nhập số bất kì vào đây: </label>
+<input type="text" id="input"
+       oninput="addOneNum(this.value)"
+       onchange="addOneNum(this.value)">
+<p id="result"></p>
+<script>
+    let result = document.getElementById("result");
+    function addOneNum(number) {
+        number = parseFloat(number);
+        number += 1;
+        result.innerHTML = number;
+    }
+</script>
+</body>
+</html>
