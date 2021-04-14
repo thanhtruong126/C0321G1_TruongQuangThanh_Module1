@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập tạo và sử dụng hàm 02 bài 2</title>
+</head>
+<body>
+<pre>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được</pre>
+<label for="banKinh">Nhập bán kính hình tròn: </label>
+<input type="number" id="banKinh">
+<input type="button" value="Tính" onclick="tinhDienTich(); tinhChuVi()">
+<p id="result1"></p>
+<p id="result2"></p>
+<hr>
+<pre>Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</pre>
+<label for="num3">Nhập một số nguyên bất kỳ: </label>
+<input type="number" id="num3">
+<input type="button" value="Tính" onclick="tinhGiaiThua()">
+<p id="result3"></p>
+<hr>
+<pre>Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.</pre>
+<label for="input4">Nhập một ký tự bất kỳ: </label>
+<input type="text" id="input4">
+<input type="button" value="Kiểm tra" onclick="kiemTraKyTu()">
+<p id="result4"></p>
+<hr>
+<pre>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</pre>
+<input type="button" value="Check" onclick="checkMin()">
+<p id="result5"></p>
+<hr>
+<pre>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.</pre>
+<input type="button" value="Check" onclick="kiemTraSoNguyenDuong()">
+<p id="result6"></p>
+<hr>
+<pre>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</pre>
+<input type="button" value="Swap" onclick="swapAtoB()">
+<p id="result7"></p>
+<p id="result8"></p>
+<hr>
+<pre>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</pre>
+<input type="button" value="Add&Reverse" onclick="addReverse()">
+<p id="result9"></p>
+<p id="result10"></p>
+<hr>
+<pre>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </pre>
+<input type="button" value="Add&Check" onclick="addStrArrayAndCheck()">
+<p id="result11"></p>
+<p id="result12"></p>
+<script>
+    function tinhBinhPhuong(number) {
+        number *= number;
+        return number;
+    }
+
+    function tinhDienTich() {
+        let result = document.getElementById("result1");
+        let a = parseFloat(document.getElementById("banKinh").value);
+        let dienTich = tinhBinhPhuong(a) * 3.14;
+        result.innerHTML = "Diện tích hình tròn là " + dienTich;
+    }
+
+    function tinhChuVi() {
+        let result = document.getElementById("result2");
+        let a = parseFloat(document.getElementById("banKinh").value);
+        let chuVi = 2 * a * 3.14;
+        result.innerHTML = "Chu vi hình tròn là " + chuVi;
+    }
+    
+    function tinhGiaiThua() {
+        let result = document.getElementById("result3");
+        let a = parseFloat(document.getElementById("num3").value);
+        let b = 1;
+        for (let i = 1; i <= a; i++) {
+            b = b * i;
+        }
+        result.innerHTML = b;
+    }
+
+    function kiemTraKyTu() {
+        let result = document.getElementById("result4");
+        let a = document.getElementById("input4").value;
+        if (isNaN(a)) {
+            result.innerText = "Ký tự không phải số."
+        } else {
+            result.innerText = "Ký tự là số."
+        }
+    }
+    
+    function checkMin(a, b, c) {
+        let result = document.getElementById("result5");
+        a = parseInt(prompt("Nhập số nguyên a bất kỳ: "));
+        b = parseInt(prompt("Nhập số nguyên b bất kỳ: "));
+        c = parseInt(prompt("Nhập số nguyên c bất kỳ: "));
+        if (a < b) {
+            if (a < c) {
+                result.innerHTML = a + " là số nguyên nhỏ nhất.";
+            }
+        } else if (b < c) {
+            result.innerHTML = b + " là số nguyên nhỏ nhất.";
+        } else {
+            result.innerHTML = c + " là số nguyên nhỏ nhất.";
+        }
+    }
+    
+    function kiemTraSoNguyenDuong(num) {
+        num = parseInt(prompt("Nhập vào một số nguyên dương bất kỳ: "));
+        result = document.getElementById("result6");
+        if (!(isNaN(num)) && num > 0) {
+            return result.innerText = "True";
+        } else {
+            return result.innerText = "False";
+        }
+    }
+    
+    function swapAtoB(num1, num2) {
+        let temp;
+        let result1 = document.getElementById("result8");
+        let result2 = document.getElementById("result7");
+        num1 = parseInt(prompt("Nhập số nguyên a bất kỳ: "));
+        num2 = parseInt(prompt("Nhập số nguyên b bất kỳ: "));
+        result2.innerHTML = "Vị trí chưa đổi chỗ lần lượt của 2 số nguyên a và b là " + num1 + ", " + num2;
+        temp = num1;
+        num1 = num2;
+        num2 =temp;
+        result1.innerHTML = "Vị trí đã đổi chỗ lần lượt của 2 số nguyên a và b là " + num1 + ", " + num2;
+    }
+
+    function addReverse(num) {
+        let result1 = document.getElementById("result9");
+        let result2 = document.getElementById("result10");
+        let arr = [1, 4, 6, 7];
+        result1.innerHTML = "Mảng ban đầu " + arr;
+        num = parseInt(prompt("Nhập số nguyên bất kỳ để thêm vào mảng: "));
+        arr.push(num);
+        arr.reverse();
+        result2.innerHTML = "Mảng đã được thêm số nguyên và đảo ngược: " + arr;
+    }
+
+    function addStrArrayAndCheck(n, char) {
+        let arr = [];
+        n = prompt("Nhập kích thước của mảng : ")
+        for (let i = 0; i < n; i++) {
+            arr[i] = prompt("Nhập ký tự cho phần tử thứ " + i);
+        }
+        let result1 = document.getElementById("result11");
+        let result2 = document.getElementById("result12");
+        result1.innerHTML = arr;
+        let count = 0;
+        char = prompt("Nhập một ký tự bất kỳ: ");
+        // document.write(char);
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == char) {
+                count += 1;
+            }
+        } return result2.innerHTML = count;
+    }
+
+</script>
+</body>
+</html>
