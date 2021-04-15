@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    function Temperature(number) {
+        this.number = number;
+
+        this.getCtoF = function () {
+            return (this.number * 9 / 5) + 32;
+        }
+        this.getCtoK = function () {
+            return this.number + 273;
+        }
+    }
+
+    let temperature = new Temperature(25);
+    temperature.getCtoF();
+    temperature.getCtoK();
+    console.log("25 độ C bằng " + temperature.getCtoF() + " độ F.");
+    console.log("25 độ C bằng " + temperature.getCtoK() + " độ K.");
+</script>
+</body>
+</html>
