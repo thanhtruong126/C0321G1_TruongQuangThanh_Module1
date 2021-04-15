@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d3d3d3;"></canvas>
+
+<script>
+    function Rectangle(width, height) {
+        this.width = width;
+        this.height = height;
+
+        this.getArea = function () {
+            return this.width * this.height;
+        }
+
+        this.getPerimeter = function () {
+            return (this.height + this.width) * 2;
+        }
+
+        this.setWidth = function (width) {
+            this.width = width;
+        }
+
+        this.setHeight = function (height) {
+            this.height = height;
+        }
+
+        this.display = function () {
+            let canvas = document.getElementById("myCanvas");
+            let context = canvas.getContext("2d");
+            // let rectangle = new Rectangle(width, height);
+            context.beginPath();
+            context.fillRect(0, 0, width, height);
+        }
+    }
+
+    let rectangle = new Rectangle(50, 25);
+    rectangle.display();
+    console.log("Diện tích hình chữ nhật: " + rectangle.getArea());
+    console.log("Chu vi hình chữ nhật: "+ rectangle.getPerimeter());
+
+    rectangle.setWidth(100);
+    rectangle.setHeight(50);
+    console.log("Diện tích hình chữ nhật: " + rectangle.getArea());
+    console.log("Chu vi hình chữ nhật: "+ rectangle.getPerimeter());
+
+</script>
+</body>
+</html>
