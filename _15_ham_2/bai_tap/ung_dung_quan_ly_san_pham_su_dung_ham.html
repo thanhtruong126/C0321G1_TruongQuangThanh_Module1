@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> ADD NEW PRODUCT</h1>
+<form>
+    <input type="text" placeholder="New product" id="nhap"/>
+    <input style="background-color: green" type="button" value="ADD" onclick="add()"/>
+</form>
+<h1> Display All Product</h1>
+<p> Product Name </p>
+<p id="v"></p>
+<script>
+    let a = [];
+
+    function add() {
+        let b = document.getElementById("nhap").value;
+        if (b !== ""&&a.includes(b)===false) {
+            a.push(b);
+        }
+        hienThi();
+    }
+
+    function hienThi() {
+        let bang = '<table>';
+        for (let i = 0; i < a.length; i++) {
+            bang += '<tr>\n' +
+                '<th>' + a[i] + '</th>\n' +
+                '<th><input style="background-color: green" type="button"value="EDIT" onclick="edit(' + i + ')"/></th>\n' +
+                '<th><input style="background-color: green" type="button"value="DELETE" onclick="delete1(' + i + ')"/></th>\n' +
+                '</tr>'
+        }
+        bang += '</table>';
+        document.getElementById("v").innerHTML = bang;
+
+    }
+
+    function edit(m) {
+        let g = prompt("sua lai thong tin ,please!");
+        a[m] = g;
+        hienThi();
+    }
+
+    function delete1(n) {
+        if (confirm("are you sure???")) {
+            a.splice(n, 1);
+            hienThi();
+        }
+
+    }
+</script>
+</body>
+</html>
