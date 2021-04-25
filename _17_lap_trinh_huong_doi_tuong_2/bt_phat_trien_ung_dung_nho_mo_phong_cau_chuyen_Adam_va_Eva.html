@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple{
+        constructor(weight,color) {
+            this.weight=weight;
+            this.color=color;
+        }
+
+        getWeight(){
+            return this.weight;
+        }
+        getColor(){
+            return this.color;
+        }
+    }
+    class Human{
+        constructor(name,gender,weight) {
+            this.name=name;
+            this.gender=gender;
+            this.weight=weight;
+        }
+        say(humanText){
+            console.log("human say: "+humanText)
+        }
+
+        checkApple(apple){
+            if(apple.getColor()==="do"&& apple.weight>0){
+                this.say(" tao nay an duoc");
+            }
+        }
+        eatApple(apple1){
+            if(apple1.weight>0){
+                this.say("tao ngon qua")
+                apple1.weight--;
+                this.weight++;
+                alert(this.name + "'s weight is: "+this.weight+" apple weight: "+apple1.weight)
+            }
+        }
+        getName(){
+            return this.name;
+        }
+        getGender(){
+            return this.gender;
+        }
+    }
+
+    let apple = new Apple(10, "do");
+    let human = new Human("hau", "Male", 50);
+    let human2 = new Human("hue", "Fmale", 45);
+
+    //nguoi thu 1
+
+    human.getName();
+    human.getGender();
+    apple.getWeight();
+    human.say("tao nay an duoc khong a?")
+    human.checkApple(apple);
+    human.eatApple(apple);
+    console.log(apple);
+    console.log(human);
+
+    // nguoi thu 2
+
+    human2.getName();
+    human2.getGender();
+    apple.getWeight();
+    human2.say("tao nay an duoc khong a?")
+    human2.checkApple(apple);
+    human2.eatApple(apple);
+    console.log(apple);
+    console.log(human2);
+</script>
+</body>
+</html>
