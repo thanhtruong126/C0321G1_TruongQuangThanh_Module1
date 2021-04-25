@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết một chương trình để đếm số từ trong một chuỗi</title>
+</head>
+<body>
+<script>
+    let b = 'abc1 def';
+    console.log(b.length);
+    console.log(b);
+    let c = b.split(" ");
+    console.log(c);
+    let count = 0;
+    for (let i = 0; i < c.length; i++) {
+        if (isNaN(c[i])) {
+            count += 1;
+        }
+    }
+    alert(count);
+</script>
+</body>
+</html>
