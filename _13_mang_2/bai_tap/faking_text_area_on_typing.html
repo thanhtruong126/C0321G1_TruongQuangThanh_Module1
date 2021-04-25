@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Type anthing slowly</h1>
+<textarea style="width: 500px; height: 200px" onkeyup="fakingText()" id="display"></textarea>
+<script>
+
+
+    // dua mot chuoi thanh mot mang, moi ky tu la mot phan tu ke ca dau cach,dau cham than
+
+    //  cach 1: let fixString = "Tôi là một đứa ngốc!!!".split("");
+    // cach 2
+    let fixString = Array.from("Tôi là một đứa ngốc!!!");
+    function fakingText() {
+        let inputText = document.getElementById("display").value;
+
+        // do dai cua chuoi xuat ra output bang do dai chuoi input nhap vao
+        let outputText = new Array(inputText.length)
+
+        // neu nguoi dung nhap vao nhieu hon do dai cua mang da cho thi xet cho quay lai tu dau
+        if(outputText.length > fixString.length){
+            outputText = [""];
+        }
+
+        // lay gia tri phan tu i cua mang fixString gan cho phan tu i cua mang outputText
+        for (let i = 0; i < outputText.length; i++) {
+            outputText[i] = fixString[i];
+        }
+        document.getElementById("display").value = outputText.join("");
+    }
+</script>
+</body>
+</html>
